@@ -1,0 +1,18 @@
+{
+  "exclude": [
+    "node_modules",
+  ],
+  "compilerOptions": {
+    "target": "ES2015",
+    "lib": ["DOM", "ESNext"],
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "jsx": "react",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "noEmitOnError": true,
+    "allowJs": true,
+    "baseUrl": "."
+  }
+}
