@@ -21,9 +21,7 @@ const sourceDirs = [
 const primaryColor = '#324558';
 
 const parseSvg = (svg: string) => {
-  let newSvg = svg.replace(/-([a-z])(?=[a-z\-]*[=\s/>])/g, (g) => g[1].toUpperCase());
-
-  newSvg = newSvg.replace(
+  return svg.replace(
     /<svg([^>]+)>/,
     `<svg$1 
       fill="#b6c2cd" 
@@ -35,8 +33,6 @@ const parseSvg = (svg: string) => {
       v-bind="attrs"
     >`
   );
-
-  return newSvg;
 };
 
 export default (async () => {
@@ -69,7 +65,6 @@ export default (async () => {
           new RegExp(`${primaryColor}`, 'g'),
           'currentColor'
         );
-
         const component = `
 <template>
   ${parseSvg(optimizedSvgString)}
